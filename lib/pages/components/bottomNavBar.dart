@@ -111,6 +111,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                       }
                       panelSelected[1] = true;
                     });
+                    widget.changeCallback(selectedIndex);
                   },
                 ),
                 GestureDetector(
@@ -131,6 +132,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                       }
                       panelSelected[2] = true;
                     });
+                    widget.changeCallback(selectedIndex);
                   },
                 )
               ],

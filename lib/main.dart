@@ -1,3 +1,4 @@
+import 'package:app_for_smart_home/pages/lights_screen.dart';
 import 'package:app_for_smart_home/pages/nice_temperature_screen.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import
@@ -15,8 +16,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int activePage = 0;
   void changePage(int index) {
-    setState(() {});
+    setState(() {
+      activePage = index;
+    });
   }
 
   @override
@@ -27,7 +31,8 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Column(
             children: [
-              Expanded(child: NiceTemperatureScreen()),
+              Expanded(
+                  child: [NiceTemperatureScreen(), LightsScreen()][activePage]),
               BottomNavBar(changeCallback: changePage)
             ],
           ),
