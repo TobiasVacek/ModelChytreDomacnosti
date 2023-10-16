@@ -202,7 +202,7 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                         child: Stack(
                           children: [
                             AnimatedContainer(
-                              duration: Duration(milliseconds: 100),
+                              duration: Duration(milliseconds: 300),
                               margin: EdgeInsets.only(right: 10),
                               height: 20,
                               width: 50,
@@ -235,7 +235,7 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                                   colors: [
                                     regulace
                                         ? Color(0xfff0ece0)
-                                        : Color(0xfff7849b),
+                                        : Color.fromARGB(255, 37, 21, 24),
                                     regulace
                                         ? Color(0xffddcbb5)
                                         : Color(0xfff0d7a4),
@@ -246,7 +246,7 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                             AnimatedPositioned(
                               width: 14,
                               height: 14,
-                              duration: Duration(milliseconds: 100),
+                              duration: Duration(milliseconds: 300),
                               left: regulace ? 5 : 30,
                               top: 3,
                               child: Container(

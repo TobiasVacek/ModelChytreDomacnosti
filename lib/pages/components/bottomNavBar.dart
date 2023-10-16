@@ -23,11 +23,28 @@ class _BottomNavBarState extends State<BottomNavBar> {
       width: widthMainBar,
       margin: EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0xffe9e6e1),
+            offset: Offset(
+              5.0,
+              5.0,
+            ),
+            blurRadius: 10.0,
+            spreadRadius: 2.0,
+          ), //BoxShadow
+          BoxShadow(
+            color: Color(0xffe9e6e1),
+            offset: Offset(0.0, 0.0),
+            blurRadius: 0.0,
+            spreadRadius: 0.0,
+          ), //BoxShadow
+        ],
         borderRadius: BorderRadius.circular(10),
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Color.fromARGB(255, 211, 215, 216), Color(0xfffdfaf5)],
+          colors: [Color.fromRGBO(234, 230, 221, 1), Color(0xfffdfaf5)],
         ),
       ),
       child: Stack(
@@ -61,8 +78,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     color: Colors.transparent,
                     child: Icon(Icons.thermostat,
                         color: panelSelected[0]
-                            ? const Color.fromARGB(255, 158, 103, 93)
-                            : Colors.blueGrey),
+                            ? Colors.black
+                            : Color(0xffddcbb5)),
                   ),
                   onTap: () {
                     setState(() {
@@ -82,8 +99,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     color: Colors.transparent,
                     child: Icon(Icons.lightbulb,
                         color: panelSelected[1]
-                            ? Color.fromARGB(255, 158, 103, 93)
-                            : Colors.blueGrey),
+                            ? Colors.black
+                            : Color(0xffddcbb5)),
                   ),
                   onTap: () {
                     setState(() {
@@ -93,7 +110,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
                         panelSelected[i] = false;
                       }
                       panelSelected[1] = true;
-                      print(panelSelected);
                     });
                   },
                 ),
@@ -104,8 +120,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                       color: Colors.transparent,
                       child: Icon(Icons.curtains,
                           color: panelSelected[2]
-                              ? const Color.fromARGB(255, 158, 103, 93)
-                              : Colors.blueGrey)),
+                              ? Colors.black
+                              : Color(0xffddcbb5))),
                   onTap: () {
                     setState(() {
                       selectedIndex = 2;
