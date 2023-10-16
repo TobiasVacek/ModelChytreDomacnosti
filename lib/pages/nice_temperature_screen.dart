@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
+import 'package:app_for_smart_home/utils/colorScheme.dart';
 
 class NiceTemperatureScreen extends StatefulWidget {
   const NiceTemperatureScreen({Key? key}) : super(key: key);
@@ -15,10 +16,11 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ColorScheme light = lightColorScheme;
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: light.background,
         body: Container(
-          color: Color(0xfff7f6f2),
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,9 +34,9 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                       height: 100,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
-                            color: Color(0xffe9e6e1),
+                            color: light.shadow,
                             offset: Offset(
                               5.0,
                               5.0,
@@ -43,18 +45,18 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                             spreadRadius: 2.0,
                           ), //BoxShadow
                           BoxShadow(
-                            color: Color(0xffe9e6e1),
+                            color: light.shadow,
                             offset: Offset(0.0, 0.0),
                             blurRadius: 0.0,
                             spreadRadius: 0.0,
                           ), //BoxShadow
                         ],
-                        gradient: const LinearGradient(
+                        gradient: LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            Color.fromRGBO(234, 230, 221, 1),
-                            Color(0xfffdfaf5)
+                            light.primaryContainer,
+                            light.secondaryContainer
                           ],
                         ),
                       ),
@@ -63,13 +65,12 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                         children: [
                           ShaderMask(
                             blendMode: BlendMode.srcIn,
-                            shaderCallback: (Rect bounds) =>
-                                const LinearGradient(
+                            shaderCallback: (Rect bounds) => LinearGradient(
                               begin: Alignment.centerLeft,
                               end: Alignment.centerRight,
                               colors: [
-                                Color(0xfff0d7a4),
-                                Color(0xfff7849b),
+                                light.primary,
+                                light.secondary,
                               ],
                             ).createShader(bounds),
                             child: const Icon(
@@ -88,9 +89,9 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                     Container(
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
-                              color: Color(0xffe9e6e1),
+                              color: light.shadow,
                               offset: Offset(
                                 5.0,
                                 5.0,
@@ -99,7 +100,7 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                               spreadRadius: 2.0,
                             ), //BoxShadow
                             BoxShadow(
-                              color: Color(0xffe9e6e1),
+                              color: light.shadow,
                               offset: Offset(0.0, 0.0),
                               blurRadius: 0.0,
                               spreadRadius: 0.0,
@@ -109,8 +110,8 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                               colors: [
-                                Color.fromRGBO(234, 230, 221, 1),
-                                Color(0xfffdfaf5)
+                                light.primaryContainer,
+                                light.secondaryContainer
                               ]),
                           borderRadius: BorderRadius.circular(55)),
                       child: Center(
@@ -135,14 +136,14 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                                 trackWidth: 10, handlerSize: 5),
                             customColors: CustomSliderColors(
                                 trackColors: [
-                                  Color.fromRGBO(234, 230, 221, 1),
-                                  Color(0xfffdfaf5)
+                                  light.primaryContainer,
+                                  light.secondaryContainer
                                 ],
                                 dynamicGradient: true,
                                 hideShadow: true,
                                 progressBarColors: [
-                                  Color(0xfff0d7a4),
-                                  Color(0xfff7849b),
+                                  light.primary,
+                                  light.secondary,
                                 ]),
                           ),
                         ),
@@ -155,9 +156,9 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                   height: 35,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
-                        color: Color(0xffe9e6e1),
+                        color: light.shadow,
                         offset: Offset(
                           5.0,
                           5.0,
@@ -166,18 +167,18 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                         spreadRadius: 2.0,
                       ), //BoxShadow
                       BoxShadow(
-                        color: Color(0xffe9e6e1),
+                        color: light.shadow,
                         offset: Offset(0.0, 0.0),
                         blurRadius: 0.0,
                         spreadRadius: 0.0,
                       ), //BoxShadow
                     ],
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                        Color.fromRGBO(234, 230, 221, 1),
-                        Color(0xfffdfaf5)
+                        light.primaryContainer,
+                        light.secondaryContainer
                       ],
                     ),
                   ),
@@ -208,9 +209,9 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                               width: 50,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
-                                    color: Color(0xffe9e6e1),
+                                    color: light.shadow,
                                     offset: Offset(
                                       5.0,
                                       5.0,
@@ -219,7 +220,7 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                                     spreadRadius: 2.0,
                                   ), //BoxShadow
                                   BoxShadow(
-                                    color: Color(0xffe9e6e1),
+                                    color: light.shadow,
                                     offset: Offset(0.0, 0.0),
                                     blurRadius: 0.0,
                                     spreadRadius: 0.0,
@@ -235,10 +236,10 @@ class _NiceTemperatureScreenState extends State<NiceTemperatureScreen> {
                                   colors: [
                                     regulace
                                         ? Color(0xfff0ece0)
-                                        : Color(0xfff7849b),
+                                        : light.secondary,
                                     regulace
                                         ? Color(0xffddcbb5)
-                                        : Color(0xfff0d7a4),
+                                        : light.primary,
                                   ],
                                 ),
                               ),

@@ -1,3 +1,4 @@
+import 'package:app_for_smart_home/utils/colorScheme.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -17,15 +18,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
     double screenWidth = MediaQuery.of(context).size.width;
 
     double widthMainBar = screenWidth - screenWidth / 4;
+    ColorScheme light = lightColorScheme;
 
     return Container(
       height: 36,
       width: widthMainBar,
       margin: EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
-            color: Color(0xffe9e6e1),
+            color: light.shadow,
             offset: Offset(
               5.0,
               5.0,
@@ -34,17 +36,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
             spreadRadius: 2.0,
           ), //BoxShadow
           BoxShadow(
-            color: Color(0xffe9e6e1),
+            color: light.shadow,
             offset: Offset(0.0, 0.0),
             blurRadius: 0.0,
             spreadRadius: 0.0,
           ), //BoxShadow
         ],
         borderRadius: BorderRadius.circular(10),
-        gradient: const LinearGradient(
+        gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Color.fromRGBO(234, 230, 221, 1), Color(0xfffdfaf5)],
+          colors: [light.primaryContainer, light.secondaryContainer],
         ),
       ),
       child: Stack(
@@ -58,10 +60,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                gradient: const LinearGradient(
+                gradient: LinearGradient(
                   colors: [
-                    Color(0xfff6d0a3),
-                    Color(0xfff7849b),
+                    light.primary,
+                    light.secondary,
                   ],
                 ),
               ),
@@ -78,8 +80,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     color: Colors.transparent,
                     child: Icon(Icons.thermostat,
                         color: panelSelected[0]
-                            ? Colors.black
-                            : Color(0xffddcbb5)),
+                            ? light.onPrimary
+                            : light.onSecondary),
                   ),
                   onTap: () {
                     setState(() {
@@ -99,8 +101,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     color: Colors.transparent,
                     child: Icon(Icons.lightbulb,
                         color: panelSelected[1]
-                            ? Colors.black
-                            : Color(0xffddcbb5)),
+                            ? light.onPrimary
+                            : light.onSecondary),
                   ),
                   onTap: () {
                     setState(() {
@@ -121,8 +123,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                       color: Colors.transparent,
                       child: Icon(Icons.curtains,
                           color: panelSelected[2]
-                              ? Colors.black
-                              : Color(0xffddcbb5))),
+                              ? light.onPrimary
+                              : light.onSecondary)),
                   onTap: () {
                     setState(() {
                       selectedIndex = 2;

@@ -3,6 +3,7 @@ import 'package:app_for_smart_home/pages/nice_temperature_screen.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:app_for_smart_home/pages/components/bottomNavBar.dart';
+import 'package:app_for_smart_home/utils/colorScheme.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,14 +26,20 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    ColorScheme light = lightColorScheme;
+
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xfff7f6f2),
+        backgroundColor: light.background,
         body: Center(
           child: Column(
             children: [
               Expanded(
-                  child: [NiceTemperatureScreen(), LightsScreen()][activePage]),
+                  child: [
+                NiceTemperatureScreen(),
+                LightsScreen(),
+                LightsScreen()
+              ][activePage]),
               BottomNavBar(changeCallback: changePage)
             ],
           ),
