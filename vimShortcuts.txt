@@ -1,0 +1,15 @@
+normal to insert: 
+    before cursor: i
+    after cursor: a
+    end line: A
+    line under: o
+    line above: O
+    
+movement:
+    wasd:khjl
+    word forward: w
+    word back: b
+    
+delete:
+    line: dd
+    word: dw
